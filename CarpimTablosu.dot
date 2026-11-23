@@ -1,0 +1,18 @@
+digraph CarpimTablosu {
+    charset="UTF-8";
+    rankdir=TB;
+    node [fontname="Helvetica"];
+
+    basla [shape=ellipse,       label="BAŞLA"];
+    baslat [shape=box,          label="i = 1"];
+    karar [shape=diamond,       label="i <= 10 mu?"];
+    yaz   [shape=parallelogram, label="5 x i = 5 * i yaz"];
+    artir [shape=box,           label="i = i + 1"];
+    bitir [shape=ellipse,       label="BİTİR"];
+
+    basla -> baslat -> karar;
+    karar -> yaz   [label="Evet"];
+    karar -> bitir [label="Hayır"];
+    yaz -> artir;
+    artir -> karar;   
+}
